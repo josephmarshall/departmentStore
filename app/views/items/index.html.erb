@@ -1,0 +1,12 @@
+<h1><%= @department.name %> Items</h1>
+<p>Find me in app/views/items/index.html.erb</p>
+<% @items.each do |item| %>
+<h2><%= link_to item.name, department_item_path(@department, item) %>
+<button><%= button_to 'Edit', edit_department_item_path(@department, item), method: :get %></button>
+<button><%= button_to 'X', department_item_path(@department, item), method: :delete %></button>
+</h2>
+<h5><%= item.description %></h5>
+<h5><%= item.price %></h5>
+<% end %>
+<%= button_to 'New', new_department_item_path(@department, @item), method: :get %>
+

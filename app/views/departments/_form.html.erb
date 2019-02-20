@@ -1,0 +1,6 @@
+<h1><%= @department.name ? 'Edit' : 'Create'  %> Department</h1>
+<%= form_for @department do |department| %>
+  <%= department.label :name %>
+  <%= department.text_field :name %>
+  <%= department.submit %>
+  <% end %>
