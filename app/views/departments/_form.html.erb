@@ -2,5 +2,7 @@
 <%= form_for @department do |department| %>
   <%= department.label :name %>
   <%= department.text_field :name %>
+  <%= department.label :description %>
+  <%= department.text_area :description %>
   <%= department.submit %>
   <% end %>

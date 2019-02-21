@@ -1,6 +1,7 @@
 <h1>Departments</h1>
 <% @departments.each do |d| %>
 <h4><%= link_to d.name, department_items_path(d) %>
+<button><%= button_to 'Show', department_path(d), method: :get %></button>
 <button><%= button_to 'Edit', edit_department_path(d), method: :get %></button>
 <button><%= button_to 'X', d, method: :delete %></button>
 </h4>
@@ -8,3 +9,4 @@
 
 <% end %>
 <%= button_to 'New', new_department_path, method: :get %>
+<%= button_to 'Create 5 Exciting Departments', departments_random_departments_path, method: :post %>

@@ -43,10 +43,20 @@ class DepartmentsController < ApplicationController
     redirect_to departments_path
   end
 
+  def random_departments
+      for @department in 1..5 do
+      @department = Department.new
+      @department.name = Faker::Commerce.department
+      @department.description = Faker::ChuckNorris.fact
+      @department.save
+      end
+      redirect_to departments_path
+    end
+
   private
 
   def department_params
-    params.require(:department).permit(:name)
+    params.require(:department).permit(:name, :description)
   end
 
 end

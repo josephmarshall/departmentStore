@@ -1,5 +1,5 @@
 <h1><%= @department.name %> Items</h1>
-<p>Find me in app/views/items/index.html.erb</p>
+<h2><%= @department.description %></h2>
 <% @items.each do |item| %>
 <h2><%= link_to item.name, department_item_path(@department, item) %>
 <button><%= button_to 'Edit', edit_department_item_path(@department, item), method: :get %></button>
@@ -9,4 +9,6 @@
 <h5><%= item.price %></h5>
 <% end %>
 <%= button_to 'New', new_department_item_path(@department, @item), method: :get %>
+<%= button_to 'back', departments_path, method: :get %>
+<%= button_to 'Create 5 Random Items', department_items_random_items_path(@department), method: :post %>
 

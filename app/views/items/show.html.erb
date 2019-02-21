@@ -1,2 +1,4 @@
-<h1>Items#show</h1>
-<p>Find me in app/views/items/show.html.erb</p>
+<h1><%= @item.name %></h1>
+<p><%= @item.description %></p>
+<h1><%= @item.price %></h1>
+<%= button_to 'Back', department_items_path(@department), method: :get %>

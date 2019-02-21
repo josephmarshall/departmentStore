@@ -41,6 +41,17 @@ class ItemsController < ApplicationController
     redirect_to department_items_path(@department)
   end
 
+  def random_items
+    for @item in 1..5 do
+    @item = @department.items.new
+    @item.name = Faker::Commerce.product_name
+    @item.description = Faker::ChuckNorris.fact
+    @item.price = rand(1..100000)
+    @item.save
+    end
+    redirect_to department_items_path(@department)
+  end
+
   private
 
   def item_params
